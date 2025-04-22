@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ruang Kata</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f5f9ff;
+    }
+    .card {
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.03);
+    }
+    .navbar, footer {
+      background-color: #dbeafe;
+    }
+    .card-title {
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="homepage.html">Ruang Kata</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">Tentang</a></li>
+          <li class="nav-item"><a class="nav-link active fw-semibold" href="portfolio.html">Karya</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
+        </ul>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<section class="py-5">
+  <div class="container text-center mb-4">
+    <h2 class="fw-bold">Karya-Ku</h2>
+    <p class="text-muted">Beberapa karya tulis yang lahir dari ruang imajinasi dan rasa.</p>
+    <div class="mb-4">
+      <select id="genreFilter" class="form-select w-auto mx-auto" onchange="filterCards()">
+        <option value="all">Tampilkan Semua</option>
+        <option value="romantis">Romantis</option>
+        <option value="drama">Drama</option>
+        <option value="slice">Slice of Life</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row g-4" id="karyaContainer">
+      <div class="col-md-4 karya-card" data-genre="romantis">
+        <div class="card shadow-sm h-100">
+          <img src="karya1.jpg" class="card-img-top" alt="Karya 1">
+          <div class="card-body">
+            <h5 class="card-title">Senja dan Segelas Kopi</h5>
+            <p class="text-muted mb-1"><em>Genre: Romantis</em></p>
+            <p class="card-text">Kumpulan puisi yang menggambarkan perasaan rindu di tengah senja dan aroma kopi hitam yang menenangkan.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 karya-card" data-genre="drama">
+        <div class="card shadow-sm h-100">
+          <img src="karya2.jpg" class="card-img-top" alt="Karya 2">
+          <div class="card-body">
+            <h5 class="card-title">Pantai dan Kata yang Terlupa</h5>
+            <p class="text-muted mb-1"><em>Genre: Drama</em></p>
+            <p class="card-text">Sebuah cerita pendek tentang kehilangan dan proses menemukan kembali bagian diri yang hilang di tepi pantai.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 karya-card" data-genre="slice">
+        <div class="card shadow-sm h-100">
+          <img src="karya3.jpg" class="card-img-top" alt="Karya 3">
+          <div class="card-body">
+            <h5 class="card-title">Di Antara Bunga dan Kata</h5>
+            <p class="text-muted mb-1"><em>Genre: Slice of Life</em></p>
+            <p class="card-text">Kumpulan refleksi kecil dari keseharian, tentang harapan, luka, dan keberanian untuk terus tumbuh seperti bunga.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  function filterCards() {
+    const filter = document.getElementById('genreFilter').value;
+    const cards = document.querySelectorAll('.karya-card');
+    cards.forEach(card => {
+      const genre = card.getAttribute('data-genre');
+      card.style.display = (filter === 'all' || filter === genre) ? 'block' : 'none';
+    });
+  }
+</script>
+
+<footer class="bg-opacity-10 text-black py-4 mt-5">
+  <div class="col-md-6 text-md-end">
+    <a href="https://instagram.com/username" target="_blank" class="text-light me-3">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://wa.me/6281234567890" target="_blank" class="text-light me-3">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="mailto:anindiagita@email.com" class="text-light me-3">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </div>
+</div>
+<hr class="border-light my-3">
+<div class="text-center small">
+  &copy; 2025 Anindia Gita Cahyani. All rights reserved.
+</div>
+</div>
+</footer>
+
+</body>
+</html>
